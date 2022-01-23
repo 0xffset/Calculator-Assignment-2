@@ -1,4 +1,4 @@
-# Rpgger's Calculator
+# Rogger's Calculator
 ### Second Web Programming Assignment  (Web Basic Calculator)
 
 This basic-static HTML web calculator was developed using HTML, CSS, and JS as part of my second web programming appointment. To see the webpage running, you should click [here](https://personal-webpage-assigment-one.herokuapp.com/) to see a previsualization.
