@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e) {
+ let localStorageKeyName = 'data';
   let body = document.querySelector('body');
   let result = document.querySelector('#output');
   // Clear button calling
@@ -54,21 +55,43 @@ deleteOneSign.addEventListener('click', function() {
 });
 // Equal Clicked
     equalButton.addEventListener('click',function(){
+     let operation = {};
     if (result.value != "") {
+            let ope = "", res = 0;
             if (!consecutiveSigns()) {
                 let newOperation = result.value.substr(0, result.value.length-1);
                 result.value = eval(newOperation);
                 initialValue= eval(newOperation);
-    document.getElementById("output").value =  result.innerHTML;
+                ope = newOperation;
+                res = result.value;
             } else {
+        ope = result.value;
         result.value = eval(result.value);
         initialValue = eval(result.value);
+        res = result.value;
         }
+        operation.result = res;
+        operation.operation = ope;
     }
+    
     else {
         alert("Please, enter any operation to compute");
         }
+    setToLocalStorage(operation);
     });
+
+
+// Local Storage Operations
+function setToLocalStorage(obj) {
+    let operations = [], dataInLocalStorage = localStorage.getItem(localStorageKeyName);
+    if (dataInLocalStorage !== null) {
+        operations = JSON.parse(dataInLocalStorage);
+    }
+    operations.push(obj);
+    localStorage.setItem(localStorageKeyName, JSON.stringify(operations));
+    
+}
+
 });
 
 
