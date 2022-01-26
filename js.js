@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e) {
  let localStorageKeyName = 'data';
+  loadFromLocalStorage();
   let body = document.querySelector('body');
   let result = document.querySelector('#output');
   // Clear button calling
@@ -78,6 +79,7 @@ deleteOneSign.addEventListener('click', function() {
         alert("Please, enter any operation to compute");
         }
     setToLocalStorage(operation);
+    loadFromLocalStorage();
     });
 
 
@@ -89,7 +91,50 @@ function setToLocalStorage(obj) {
     }
     operations.push(obj);
     localStorage.setItem(localStorageKeyName, JSON.stringify(operations));
-    
+}
+
+function loadFromLocalStorage() {
+    let operations  = [],
+        dataInLocalStorage = localStorage.getItem(localStorageKeyName),
+        gridHistorial = document.querySelector("#grid-historial tbody");
+
+        if (dataInLocalStorage !== null) {
+            operations = JSON.parse(dataInLocalStorage);
+        }
+        gridHistorial.innerHTML = '';
+        
+        operations.forEach(function(x,i) {
+            let tr =  document.createElement("tr"),
+             tdOperations = document.createElement("td"),
+            tdResult  =  document.createElement("td"),
+            tdRemove = document.createElement("td"),
+                btnRemove = document.createElement("button");
+
+        tdOperations.innerHTML = x.operation;
+        tdResult.innerHTML = x.result;
+ 
+        btnRemove.textContent = 'Remove';
+        btnRemove.className = 'btn-remove';
+        btnRemove.addEventListener('click', function() {
+            removeFromLocalStorage(i);
+        })
+        tdRemove.appendChild(btnRemove);
+
+        tr.appendChild(tdOperations);
+        tr.appendChild(tdResult);
+        tr.appendChild(tdRemove);
+        gridHistorial.appendChild(tr);
+        });
+}
+
+function removeFromLocalStorage(i) {
+        let operations =[],
+            dataInLocalStorage = localStorage.getItem(localStorageKeyName);
+        
+        operations = JSON.parse(dataInLocalStorage);
+        operations.splice(i,1);
+        localStorage.setItem(localStorageKeyName, JSON.stringify(operations));
+        loadFromLocalStorage();
 }
 
 });
