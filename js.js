@@ -73,13 +73,14 @@ deleteOneSign.addEventListener('click', function() {
         }
         operation.result = res;
         operation.operation = ope;
+        setToLocalStorage(operation);
+        loadFromLocalStorage();
     }
     
     else {
         alert("Please, enter any operation to compute");
         }
-    setToLocalStorage(operation);
-    loadFromLocalStorage();
+ 
     });
 
 
