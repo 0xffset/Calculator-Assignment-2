@@ -39,7 +39,7 @@ OperationalNumbers.addEventListener('click', function(){
 // Check if exists another operational sign 
 function consecutiveSigns() {
     const lastSign =  document.getElementById("output").value;
-    let regexPattern =  lastSign.substr(lastSign.length -1).match(/\d+/g);
+    let regexPattern =  lastSign.substr(lastSign.length -1).match(/\d+/g); 
     return regexPattern != null? true: false;
      
 }
@@ -105,10 +105,10 @@ function loadFromLocalStorage() {
         
         operations.forEach(function(x,i) {
             let tr =  document.createElement("tr"),
-             tdOperations = document.createElement("td"),
+            tdOperations = document.createElement("td"),
             tdResult  =  document.createElement("td"),
             tdRemove = document.createElement("td"),
-                btnRemove = document.createElement("button");
+            btnRemove = document.createElement("button");
 
         tdOperations.innerHTML = x.operation;
         tdResult.innerHTML = x.result;
@@ -135,8 +135,7 @@ function removeFromLocalStorage(i) {
         operations.splice(i,1);
         localStorage.setItem(localStorageKeyName, JSON.stringify(operations));
         loadFromLocalStorage();
-}
-
+    }
 });
 
 

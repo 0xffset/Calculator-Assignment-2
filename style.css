@@ -42,6 +42,9 @@ button{
  .secondarybtn{
      background-color:#dadce0;
  }
+ .btn-remove {
+     font-size: 20px;
+ }
  .ansbtn {
 
     background-color: #4285f4;
@@ -49,6 +52,10 @@ button{
     color: white;
   
     
+ }
+
+ #footer {
+    font-size: 30px;
  }
 
  #backbtn{
@@ -80,4 +87,25 @@ button{
    margin-top: 50px;
 }
 
- 
+#grid-historial {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 594px;
+}
+
+#grid-historial td, #grid-historial th {
+    border: 1px, solid #ddd;
+    padding: 8px;
+}
+
+#grid-historial tr:nth-child(even){background-color: #f2f2f2;}
+
+#grid-historial tr:hover {background-color:#ddd;}
+
+#grid-historial th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:  #4285f4;
+    color: white;
+}
