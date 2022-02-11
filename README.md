@@ -1,4 +1,9 @@
 # Rogger's Calculator
+
+Rogger García Díaz <br>
+Mat. 2020-9618 <br>
+Email: 20209618@itla.edu.do <br>
+
 ### Second Web Programming Assignment  (Web Basic Calculator)
 
 This basic-static HTML web calculator was developed using HTML, CSS, and JS as part of my second web programming appointment. To see the webpage running, you should click [here](https://calculatorwebpage-assignment-2.herokuapp.com/) to see a previsualization.
