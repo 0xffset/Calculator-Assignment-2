@@ -5,3 +5,8 @@ This basic-static HTML web calculator was developed using HTML, CSS, and JS as p
 
 ### Disclaimer ⚠
 This project is deployed using [Heroku](https://dashboard.heroku.com/) and PHP. Why? Foremost, Heroku has a free-not-cost deployment of at least 5 personal projects, so it’s useful for this kind of assignment. However, Heroku does not permit the deployment of static web pages using HTML, so using the following PHP snippet of code ```<?php include_once("index.html");?>``` in an ```index.php``` to include it the corresponding HTML file. 
+
+### Web Calculator Image
+
+### Web Page Image
+<img src="/images/img.PNG" alt="WebPage" style="height: 300px; width:300px;"/>
