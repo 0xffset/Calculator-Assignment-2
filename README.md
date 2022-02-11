@@ -8,5 +8,4 @@ This project is deployed using [Heroku](https://dashboard.heroku.com/) and PHP. 
 
 ### Web Calculator Image
 
-### Web Page Image
 <img src="/images/img.PNG" alt="WebPage" style="height: 300px; width:300px;"/>
